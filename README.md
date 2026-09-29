@@ -15,7 +15,7 @@ gets promoted it has to catch the usual problems — broken geometry, bad keys, 
 country, duplicates, stale dates. Some of those are hard stops, some are just worth
 flagging, and optional missing data should stay visible without holding everything up.
 
-They also asked for the checks to be split across SQL and Python, for the run summary
+The brief also asked for the checks to be split across SQL and Python, for the run summary
 to be saved somewhere, and for tests and an example report.
 
 ## How I read it
