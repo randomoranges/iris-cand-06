@@ -1,0 +1,91 @@
+{
+  "dataset": "screening",
+  "country_code": "DE",
+  "row_count": 4,
+  "overall_outcome": "PASS",
+  "promoted": true,
+  "checks": [
+    {
+      "check_name": "required_fields",
+      "kind": "python",
+      "severity": "BLOCK",
+      "outcome": "PASS",
+      "failed_count": 0,
+      "evidence": [],
+      "detail": "all required fields present"
+    },
+    {
+      "check_name": "country_scope",
+      "kind": "python",
+      "severity": "BLOCK",
+      "outcome": "PASS",
+      "failed_count": 0,
+      "evidence": [],
+      "detail": "all rows scoped to DE"
+    },
+    {
+      "check_name": "key_uniqueness",
+      "kind": "sql",
+      "severity": "BLOCK",
+      "outcome": "PASS",
+      "failed_count": 0,
+      "evidence": [],
+      "detail": "all keys unique"
+    },
+    {
+      "check_name": "duplicate_rows",
+      "kind": "sql",
+      "severity": "BLOCK",
+      "outcome": "PASS",
+      "failed_count": 0,
+      "evidence": [],
+      "detail": "no full-row duplicates"
+    },
+    {
+      "check_name": "geometry_valid",
+      "kind": "sql",
+      "severity": "BLOCK",
+      "outcome": "PASS",
+      "failed_count": 0,
+      "evidence": [],
+      "detail": "all geometries valid"
+    },
+    {
+      "check_name": "geometry_type",
+      "kind": "sql",
+      "severity": "BLOCK",
+      "outcome": "PASS",
+      "failed_count": 0,
+      "evidence": [],
+      "detail": "all geometries in ['POLYGON', 'MULTIPOLYGON']"
+    },
+    {
+      "check_name": "geometry_srid",
+      "kind": "sql",
+      "severity": "BLOCK",
+      "outcome": "PASS",
+      "failed_count": 0,
+      "evidence": [],
+      "detail": "all geometries SRID 4326"
+    },
+    {
+      "check_name": "eco_points_present",
+      "kind": "python",
+      "severity": "WARN",
+      "outcome": "PASS",
+      "failed_count": 0,
+      "evidence": [],
+      "detail": "all required fields present"
+    },
+    {
+      "check_name": "source_date",
+      "kind": "python",
+      "severity": "WARN",
+      "outcome": "PASS",
+      "failed_count": 0,
+      "evidence": [],
+      "detail": "source_date present on all rows"
+    }
+  ],
+  "run_id": 4
+}

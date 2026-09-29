@@ -1,0 +1,24 @@
+[project]
+name = "iris-qa"
+version = "0.1.0"
+description = "Dataset-specific QA gate engine for IRIS (parcels, substations, peatland, screening)."
+requires-python = ">=3.12"
+dependencies = [
+    "psycopg[binary]>=3.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+qa = "qa.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["qa", "qa.checks"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

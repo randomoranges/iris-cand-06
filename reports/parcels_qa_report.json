@@ -1,0 +1,143 @@
+{
+  "dataset": "parcels",
+  "country_code": "DE",
+  "row_count": 13,
+  "overall_outcome": "BLOCK",
+  "promoted": false,
+  "checks": [
+    {
+      "check_name": "required_fields",
+      "kind": "python",
+      "severity": "BLOCK",
+      "outcome": "BLOCK",
+      "failed_count": 2,
+      "evidence": [
+        {
+          "key": "DE-P-0006",
+          "missing": [
+            "geom"
+          ]
+        },
+        {
+          "key": "DE-P-0007",
+          "missing": [
+            "country_code"
+          ]
+        }
+      ],
+      "detail": "2 row(s) missing required field(s)"
+    },
+    {
+      "check_name": "country_scope",
+      "kind": "python",
+      "severity": "BLOCK",
+      "outcome": "BLOCK",
+      "failed_count": 2,
+      "evidence": [
+        {
+          "key": "DE-P-0007",
+          "country_code": null,
+          "why": "null"
+        },
+        {
+          "key": "FR-P-0008",
+          "country_code": "FR",
+          "why": "expected DE"
+        }
+      ],
+      "detail": "2 row(s) out of country scope"
+    },
+    {
+      "check_name": "key_uniqueness",
+      "kind": "sql",
+      "severity": "BLOCK",
+      "outcome": "BLOCK",
+      "failed_count": 2,
+      "evidence": [
+        {
+          "key": "DE-P-0002",
+          "duplicate_count": 2
+        },
+        {
+          "key": "DE-P-0009",
+          "duplicate_count": 2
+        }
+      ],
+      "detail": "2 duplicated key value(s)"
+    },
+    {
+      "check_name": "duplicate_rows",
+      "kind": "sql",
+      "severity": "BLOCK",
+      "outcome": "BLOCK",
+      "failed_count": 1,
+      "evidence": [
+        {
+          "signature": "DE-P-0009|DE|DE-NW|2026-03-01|POLYGON((6.5 51,6.6 51,6.6 51.1,6.5 51.1,6.5 51))",
+          "duplicate_count": 2
+        }
+      ],
+      "detail": "1 fully-duplicated row group(s)"
+    },
+    {
+      "check_name": "geometry_valid",
+      "kind": "sql",
+      "severity": "BLOCK",
+      "outcome": "BLOCK",
+      "failed_count": 2,
+      "evidence": [
+        {
+          "key": "DE-P-0004",
+          "reason": "Self-intersection[6.95 51.05]"
+        },
+        {
+          "key": "DE-P-0011",
+          "reason": "Self-intersection[6.95 51.05]"
+        }
+      ],
+      "detail": "2 invalid geometry(ies)"
+    },
+    {
+      "check_name": "geometry_type",
+      "kind": "sql",
+      "severity": "BLOCK",
+      "outcome": "PASS",
+      "failed_count": 0,
+      "evidence": [],
+      "detail": "all geometries in ['POLYGON', 'MULTIPOLYGON']"
+    },
+    {
+      "check_name": "geometry_srid",
+      "kind": "sql",
+      "severity": "BLOCK",
+      "outcome": "BLOCK",
+      "failed_count": 2,
+      "evidence": [
+        {
+          "key": "DE-P-0005",
+          "found_srid": 25832
+        },
+        {
+          "key": "DE-P-0011",
+          "found_srid": 25832
+        }
+      ],
+      "detail": "2 row(s) not SRID 4326"
+    },
+    {
+      "check_name": "source_date",
+      "kind": "python",
+      "severity": "WARN",
+      "outcome": "WARN",
+      "failed_count": 1,
+      "evidence": [
+        {
+          "key": "DE-P-0010",
+          "unknown": "source_date"
+        }
+      ],
+      "detail": "1 row(s) missing source_date"
+    }
+  ],
+  "run_id": 1
+}
